@@ -1,0 +1,15 @@
+{
+  "coverage": 0,
+  "error": "critical-error",
+  "initial_h_values": {},
+  "node": "a512-ib1-b-01",
+  "planner_exit_code": 1,
+  "planner_wall_clock_time": 0.09,
+  "score_evaluations": 0.0,
+  "score_expansions": 0.0,
+  "score_generated": 0.0,
+  "unexplained_errors": [
+    "critical-error"
+  ],
+  "unsolvable": 0
+}

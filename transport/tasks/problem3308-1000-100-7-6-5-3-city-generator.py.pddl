@@ -1,0 +1,122 @@
+; Transport city-sequential-7nodes-1000size-3degree-100mindistance-5trucks-6packages-3308seed
+
+(define (problem transport-city-sequential-7nodes-1000size-3degree-100mindistance-5trucks-6packages-3308seed)
+ (:domain transport)
+ (:objects
+  city-loc-1 - location
+  city-loc-2 - location
+  city-loc-3 - location
+  city-loc-4 - location
+  city-loc-5 - location
+  city-loc-6 - location
+  city-loc-7 - location
+  truck-1 - vehicle
+  truck-2 - vehicle
+  truck-3 - vehicle
+  truck-4 - vehicle
+  truck-5 - vehicle
+  package-1 - package
+  package-2 - package
+  package-3 - package
+  package-4 - package
+  package-5 - package
+  package-6 - package
+  capacity-0 - capacity-number
+  capacity-1 - capacity-number
+  capacity-2 - capacity-number
+  capacity-3 - capacity-number
+  capacity-4 - capacity-number
+ )
+ (:init
+  (= (total-cost) 0)
+  (capacity-predecessor capacity-0 capacity-1)
+  (capacity-predecessor capacity-1 capacity-2)
+  (capacity-predecessor capacity-2 capacity-3)
+  (capacity-predecessor capacity-3 capacity-4)
+  ; 415,684 -> 593,595
+  (road city-loc-3 city-loc-1)
+  (= (road-length city-loc-3 city-loc-1) 20)
+  ; 593,595 -> 415,684
+  (road city-loc-1 city-loc-3)
+  (= (road-length city-loc-1 city-loc-3) 20)
+  ; 415,684 -> 99,851
+  (road city-loc-3 city-loc-2)
+  (= (road-length city-loc-3 city-loc-2) 36)
+  ; 99,851 -> 415,684
+  (road city-loc-2 city-loc-3)
+  (= (road-length city-loc-2 city-loc-3) 36)
+  ; 29,455 -> 99,851
+  (road city-loc-5 city-loc-2)
+  (= (road-length city-loc-5 city-loc-2) 41)
+  ; 99,851 -> 29,455
+  (road city-loc-2 city-loc-5)
+  (= (road-length city-loc-2 city-loc-5) 41)
+  ; 167,576 -> 593,595
+  (road city-loc-6 city-loc-1)
+  (= (road-length city-loc-6 city-loc-1) 43)
+  ; 593,595 -> 167,576
+  (road city-loc-1 city-loc-6)
+  (= (road-length city-loc-1 city-loc-6) 43)
+  ; 167,576 -> 99,851
+  (road city-loc-6 city-loc-2)
+  (= (road-length city-loc-6 city-loc-2) 29)
+  ; 99,851 -> 167,576
+  (road city-loc-2 city-loc-6)
+  (= (road-length city-loc-2 city-loc-6) 29)
+  ; 167,576 -> 415,684
+  (road city-loc-6 city-loc-3)
+  (= (road-length city-loc-6 city-loc-3) 27)
+  ; 415,684 -> 167,576
+  (road city-loc-3 city-loc-6)
+  (= (road-length city-loc-3 city-loc-6) 27)
+  ; 167,576 -> 29,455
+  (road city-loc-6 city-loc-5)
+  (= (road-length city-loc-6 city-loc-5) 19)
+  ; 29,455 -> 167,576
+  (road city-loc-5 city-loc-6)
+  (= (road-length city-loc-5 city-loc-6) 19)
+  ; 578,331 -> 593,595
+  (road city-loc-7 city-loc-1)
+  (= (road-length city-loc-7 city-loc-1) 27)
+  ; 593,595 -> 578,331
+  (road city-loc-1 city-loc-7)
+  (= (road-length city-loc-1 city-loc-7) 27)
+  ; 578,331 -> 415,684
+  (road city-loc-7 city-loc-3)
+  (= (road-length city-loc-7 city-loc-3) 39)
+  ; 415,684 -> 578,331
+  (road city-loc-3 city-loc-7)
+  (= (road-length city-loc-3 city-loc-7) 39)
+  ; 578,331 -> 508,144
+  (road city-loc-7 city-loc-4)
+  (= (road-length city-loc-7 city-loc-4) 20)
+  ; 508,144 -> 578,331
+  (road city-loc-4 city-loc-7)
+  (= (road-length city-loc-4 city-loc-7) 20)
+  (at package-1 city-loc-1)
+  (at package-2 city-loc-1)
+  (at package-3 city-loc-3)
+  (at package-4 city-loc-7)
+  (at package-5 city-loc-3)
+  (at package-6 city-loc-3)
+  (at truck-1 city-loc-7)
+  (capacity truck-1 capacity-4)
+  (at truck-2 city-loc-2)
+  (capacity truck-2 capacity-3)
+  (at truck-3 city-loc-5)
+  (capacity truck-3 capacity-3)
+  (at truck-4 city-loc-4)
+  (capacity truck-4 capacity-2)
+  (at truck-5 city-loc-7)
+  (capacity truck-5 capacity-2)
+ )
+ (:goal (and
+  (at package-1 city-loc-5)
+  (at package-2 city-loc-2)
+  (at package-3 city-loc-6)
+  (at package-4 city-loc-1)
+  (at package-5 city-loc-1)
+  (at package-6 city-loc-7)
+ ))
+ (:metric minimize (total-cost))
+)
